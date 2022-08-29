@@ -1,0 +1,20 @@
+::ng-deep.p-togglebutton.p-button.p-highlight {
+  background: darkgreen;
+  border-color: gray;
+  color: #ffffff;
+}
+::ng-deep.p-togglebutton.p-button.p-highlight:hover {
+  background: green;
+  border-color: grey;
+  color: #ffffff;
+}
+::ng-deep.p-togglebutton.p-button {
+  background: darkred;
+  border-color: gray;
+  color: #ffffff;
+}
+::ng-deep.p-togglebutton.p-button:not(.p-disabled):not(.p-highlight):hover {
+  background: red;
+  border-color: gray;
+  color: #ffffff;
+}

@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <td *ngFor="let parameter of PARAMETERS">
+            <p-toggleButton 
+                [onLabel]="parameter.name"
+                onIcon="pi pi-check"
+                [offLabel]="parameter.name"
+                offIcon="pi pi-times"
+                [(ngModel)]="parameter.value"
+                iconPos="right"
+                styleClass="different">
+            </p-toggleButton>
+        </td>
+    </tr>
+</table>
