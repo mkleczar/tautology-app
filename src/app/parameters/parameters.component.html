@@ -1,15 +1,15 @@
-<table>
-    <tr>
-        <td *ngFor="let parameter of PARAMETERS">
-            <p-toggleButton 
-                [onLabel]="parameter.name"
-                onIcon="pi pi-check"
-                [offLabel]="parameter.name"
-                offIcon="pi pi-times"
-                [(ngModel)]="parameter.value"
-                iconPos="right"
-                styleClass="different">
-            </p-toggleButton>
-        </td>
-    </tr>
-</table>
+
+<p-fieldset legend="Parameters">
+    <table>
+        <tr>
+            <td *ngFor="let parameter of PARAMETERS">
+                <p-toggleButton [onLabel]="parameter.name" onIcon="pi pi-check" [offLabel]="parameter.name"
+                    offIcon="pi pi-times" [(ngModel)]="parameter.value" iconPos="right" styleClass="different">
+                </p-toggleButton>
+            </td>
+            <td>
+                <p-button label="Check" styleClass="p-button-info"></p-button>
+            </td>
+        </tr>
+    </table>
+</p-fieldset>

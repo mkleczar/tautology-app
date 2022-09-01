@@ -1,0 +1,14 @@
+<p-fieldset legend="Expression">
+    <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+            <input 
+                type="text" 
+                pInputText [(ngModel)]="expression"
+                placeholder="Enter logic expression with operators: ~, |, &, =>, &lt;=>, brackets and variables: p, q, r, ...">
+            <p-button label="Validate" styleClass="p-button-info"></p-button>
+        </div>
+    </div>
+    <p>
+        Expression was recognized as: {{expression}}
+    </p>
+</p-fieldset>
