@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Parameter} from "../model/parameter.model";
 
 @Component({
   selector: 'app-parameters',
@@ -7,13 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParametersComponent implements OnInit {
 
-  constructor() { }
+  @Input() parameters: Parameter[] | undefined
 
-  PARAMETERS = [
-    {name: "p", value: true},
-    {name: "q", value: true},
-    {name: "r", value: false},
-  ];
+  constructor() { }
 
   ngOnInit(): void {
   }

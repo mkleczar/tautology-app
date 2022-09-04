@@ -13,12 +13,14 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { FieldsetModule } from 'primeng/fieldset';
 import {RippleModule} from "primeng/ripple";
+import { PresentationComponent } from './presentation/presentation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParametersComponent,
-    InputComponent
+    InputComponent,
+    PresentationComponent
   ],
     imports: [
         BrowserModule,

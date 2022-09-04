@@ -1,6 +1,18 @@
+<p class="text-6xl w-12 text-center">Logic expression validator</p>
 
-<app-input></app-input>
+<div class="card">
+  <div class="grid">
+    <div class="col-6">
+      <app-input></app-input>
+    </div>
+    <div class="col-6">
+      <app-presentation [expression]="expression"></app-presentation>
+    </div>
+    <div class="col-12">
+      <app-parameters [parameters]="parameters"></app-parameters>
+    </div>
+  </div>
+</div>
 
-<app-parameters></app-parameters>
 
 <router-outlet></router-outlet>

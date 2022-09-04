@@ -2,7 +2,7 @@
 <p-fieldset legend="Parameters">
   <table>
     <tr>
-      <td *ngFor="let parameter of PARAMETERS">
+      <td *ngFor="let parameter of parameters">
         <button pButton pRipple type="button"
                 [label]="parameter.name"
                 (click)="parameter.value = !parameter.value"
