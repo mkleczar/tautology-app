@@ -10,8 +10,15 @@ export class InputComponent implements OnInit {
   constructor() { }
 
   expression: string = ""
+  expressionValidated: string = ""
+  validationStart: boolean = false
 
   ngOnInit(): void {
+  }
+
+  onValidationStart() {
+    this.expressionValidated = this.expression;
+    this.validationStart = this.expression.length > 0;
   }
 
 }

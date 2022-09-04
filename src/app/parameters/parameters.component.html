@@ -1,15 +1,17 @@
 
 <p-fieldset legend="Parameters">
-    <table>
-        <tr>
-            <td *ngFor="let parameter of PARAMETERS">
-                <p-toggleButton [onLabel]="parameter.name" onIcon="pi pi-check" [offLabel]="parameter.name"
-                    offIcon="pi pi-times" [(ngModel)]="parameter.value" iconPos="right" styleClass="different">
-                </p-toggleButton>
-            </td>
-            <td>
-                <p-button label="Check" styleClass="p-button-info"></p-button>
-            </td>
-        </tr>
-    </table>
+  <table>
+    <tr>
+      <td *ngFor="let parameter of PARAMETERS">
+        <button pButton pRipple type="button"
+                [label]="parameter.name"
+                (click)="parameter.value = !parameter.value"
+                [ngClass]="{'p-button-success':parameter.value, 'p-button-danger':!parameter.value}"></button>
+      </td>
+      <td>
+        <p-button label="Check" styleClass="p-button-info">
+        </p-button>
+      </td>
+    </tr>
+  </table>
 </p-fieldset>

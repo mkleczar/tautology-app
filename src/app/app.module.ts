@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { FieldsetModule } from 'primeng/fieldset';
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
   declarations: [
@@ -19,16 +20,17 @@ import { FieldsetModule } from 'primeng/fieldset';
     ParametersComponent,
     InputComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    AppRoutingModule,
-    ButtonModule,
-    ToggleButtonModule,
-    InputTextModule,
-    FieldsetModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        AppRoutingModule,
+        ButtonModule,
+        ToggleButtonModule,
+        InputTextModule,
+        FieldsetModule,
+        RippleModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
