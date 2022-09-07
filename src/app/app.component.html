@@ -3,7 +3,7 @@
 <div class="card">
   <div class="grid">
     <div class="col-6">
-      <app-input></app-input>
+      <app-input (expressionChanged)="onExpressionChanged($event)"></app-input>
     </div>
     <div class="col-6">
       <app-presentation [expression]="expression"></app-presentation>

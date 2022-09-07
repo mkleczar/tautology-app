@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -9,16 +9,15 @@ export class InputComponent implements OnInit {
 
   constructor() { }
 
+  @Output() expressionChanged: EventEmitter<string> = new EventEmitter<string>()
+
   expression: string = ""
-  expressionValidated: string = ""
-  validationStart: boolean = false
 
   ngOnInit(): void {
   }
 
   onValidationStart() {
-    this.expressionValidated = this.expression;
-    this.validationStart = this.expression.length > 0;
+    this.expressionChanged.emit(this.expression)
   }
 
 }

@@ -16,4 +16,11 @@ export class AppComponent {
     {name: "q", value: false},
     {name: "r", value: true},
   ];
+
+  onExpressionChanged(exp: string) {
+    this.expression = exp;
+    this.parameters = [
+      {name: "p", value: true}
+    ]
+  }
 }
