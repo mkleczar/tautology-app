@@ -1,16 +1,16 @@
 
 <p-fieldset legend="Expression">
-  <div class="col-12">
-    <div class="p-inputgroup">
-      <input
-        type="text"
-        pInputText [(ngModel)]="expression"
-        placeholder="Enter logic expression with operators: ~, |, &, =>, &lt;=>, brackets and variables: p, q, r, ...">
-      <p-button
-        label="Validate"
-        styleClass="p-button-info"
-        (click)="onValidationStart()">
-      </p-button>
-    </div>
+  <div class="p-inputgroup col-12">
+    <input
+      class="w-full"
+      type="text"
+      placeholder="Enter logic expression with operators: ~, |, &, =>, &lt;=>, brackets and variables: p, q, r, ..."
+      #expression
+    >
+    <p-button
+      label="Validate"
+      styleClass="p-button-info"
+      (click)="onValidationStart(expression.value)">
+    </p-button>
   </div>
 </p-fieldset>

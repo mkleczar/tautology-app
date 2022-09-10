@@ -11,13 +11,11 @@ export class InputComponent implements OnInit {
 
   @Output() expressionChanged: EventEmitter<string> = new EventEmitter<string>()
 
-  expression: string = ""
-
   ngOnInit(): void {
   }
 
-  onValidationStart() {
-    this.expressionChanged.emit(this.expression)
+  onValidationStart(expression: string) {
+    this.expressionChanged.emit(expression)
   }
 
 }
