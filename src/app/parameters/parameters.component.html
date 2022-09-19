@@ -9,8 +9,8 @@
                 [ngClass]="{'p-button-success':parameter.value, 'p-button-danger':!parameter.value}"></button>
       </td>
       <td>
-        <p-button label="Check" styleClass="p-button-info">
-        </p-button>
+        <p-button label="Check" styleClass="p-button-info"
+                  (click)="onValidationChanged()"></p-button>
       </td>
     </tr>
   </table>

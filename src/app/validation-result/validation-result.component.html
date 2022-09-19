@@ -1,0 +1,9 @@
+<p-fieldset legend="Validation result">
+  <div class="w-12 text-center">
+    Expression: {{expression}}
+    <br>
+    Parameters: <div *ngFor="let parameter of parameters">{{parameter.name}} {{parameter.value}}</div>
+    <br>
+    Validation result: {{validation}}
+  </div>
+</p-fieldset>

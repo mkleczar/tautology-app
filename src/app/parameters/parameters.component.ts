@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Parameter} from "../model/parameter.model";
 
 @Component({
@@ -10,9 +10,16 @@ export class ParametersComponent implements OnInit {
 
   @Input() parameters: Parameter[] | undefined
 
+  @Output() validationChanged: EventEmitter<string> = new EventEmitter<string>()
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  onValidationChanged() {
+    this.validationChanged.emit("test")
+  }
+
 
 }

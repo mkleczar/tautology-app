@@ -14,13 +14,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FieldsetModule } from 'primeng/fieldset';
 import {RippleModule} from "primeng/ripple";
 import { PresentationComponent } from './presentation/presentation.component';
+import { ValidationResultComponent } from './validation-result/validation-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParametersComponent,
     InputComponent,
-    PresentationComponent
+    PresentationComponent,
+    ValidationResultComponent
   ],
     imports: [
         BrowserModule,

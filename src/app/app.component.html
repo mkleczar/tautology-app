@@ -8,11 +8,22 @@
     <div class="col-6">
       <app-presentation [expression]="expression"></app-presentation>
     </div>
-    <div class="col-12">
-      <app-parameters [parameters]="parameters"></app-parameters>
+    <div class="col-6">
+      <app-parameters [parameters]="parameters" (validationChanged)="onValidationChanged()"></app-parameters>
+    </div>
+    <div class="col-6">
+      <app-validation-result [expression]="expression" [parameters]="parameters" [validation]="validation"></app-validation-result>
     </div>
   </div>
 </div>
 
 
+<!--
+<p *ngFor="let parameter of parameters">
+  {{parameter.name}} is {{parameter.value}}
+</p>
+<p>
+  {{validation}}
+</p>
+-->
 <router-outlet></router-outlet>
