@@ -23,16 +23,21 @@ export class AppComponent {
   ];
 
   onExpressionChanged(exp: string) {
-    let response: ParsedExpression = this.parserService.parse(exp)
-    this.expression = response.expression
-    this.parameters = [
-      {name: "p", value: true}
-    ]
+    this.parserService.parse(exp).subscribe(
+      response => {
+        console.log(response)
+        this.expression = response.expression
+        this.parameters = [
+          {name: "p", value: true}
+        ]
+      })
   }
 
   onValidationChanged() {
-    let response = this.parserService.validate(this.expression, this.parameters)
-    console.log(response)
-    this.validation = response.validationResult;
+    this.parserService.validate(this.expression, this.parameters).subscribe(
+      response => {
+        console.log(response)
+        this.validation = response.validationResult;
+      })
   }
 }
