@@ -8,7 +8,7 @@
                 (click)="parameter.value = !parameter.value"
                 [ngClass]="{'p-button-success':parameter.value, 'p-button-danger':!parameter.value}"></button>
       </td>
-      <td>
+      <td *ngIf="parameters.length > 0">
         <p-button label="Check" styleClass="p-button-info"
                   (click)="onValidationChanged()"></p-button>
       </td>

@@ -15,29 +15,29 @@ export class AppComponent {
   }
 
 
-  expression: string = "p|q<=>~(~p&~q)";
+  expression: string = "";
+  parsedExpression: string = "";
   validation: boolean | undefined
 
-  parameters: Parameter[] = [
-    {name: "r", value: true}
-  ];
+  parameters: Parameter[] = [];
 
   onExpressionChanged(exp: string) {
+    this.expression = exp
     this.parserService.parse(exp).subscribe(
       response => {
-        console.log(response)
-        this.expression = response.expression
-        this.parameters = [
-          {name: "p", value: true}
-        ]
+        // console.log(response)
+        this.parsedExpression = response.expression
+        this.parameters = response.parameters
+          .map(param => {return {name: param, value: true}})
+          .concat()
       })
   }
 
   onValidationChanged() {
     this.parserService.validate(this.expression, this.parameters).subscribe(
       response => {
-        console.log(response)
-        this.validation = response.validationResult;
+        // console.log(response)
+        this.validation = response.value;
       })
   }
 }

@@ -3,33 +3,22 @@ import {ParsedExpression} from "../model/parsedExpression.model";
 import {Parameter} from "../model/parameter.model";
 import {ExpressionValidation} from "../model/expressionValidation.model";
 import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParserService {
 
-  constructor() { }
+  url:string = "http://localhost:8080/"
+
+  constructor(private httpClient: HttpClient) { }
 
   parse(expression: string): Observable<ParsedExpression> {
-    // TODO: make it real http service
-    return new Observable(observer => {
-      observer.next({expression: "p<=>q", parameters: ["p", "q"]})
-    })
+    return this.httpClient.post<ParsedExpression>(this.url + "parameters", {expression: expression})
   }
 
   validate(expression: string, parameters: Parameter[]): Observable<ExpressionValidation> {
-    // TODO: make it real http service
-    return new Observable(observer => {
-      observer.next( {
-          expression: "p<=>q",
-          parametersValidation: [
-            {name: "p", value: true},
-            {name: "q", value: true},
-            {name: "r", value: true}
-          ],
-          validationResult: false
-        })
-    })
+    return this.httpClient.post<ExpressionValidation>(this.url + "validate", {expression: expression, parameters: parameters})
   }
 }

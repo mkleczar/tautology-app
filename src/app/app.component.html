@@ -6,13 +6,14 @@
       <app-input (expressionChanged)="onExpressionChanged($event)"></app-input>
     </div>
     <div class="col-6">
-      <app-presentation [expression]="expression"></app-presentation>
+      <app-presentation [expression]="parsedExpression"></app-presentation>
     </div>
     <div class="col-6">
       <app-parameters [parameters]="parameters" (validationChanged)="onValidationChanged()"></app-parameters>
     </div>
     <div class="col-6">
-      <app-validation-result [expression]="expression" [parameters]="parameters" [validation]="validation"></app-validation-result>
+      <!-- TODO: use copy of parameters -->
+      <app-validation-result [expression]="parsedExpression" [parameters]="parameters" [validation]="validation"></app-validation-result>
     </div>
   </div>
 </div>

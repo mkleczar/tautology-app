@@ -8,7 +8,7 @@ import {Parameter} from "../model/parameter.model";
 })
 export class ParametersComponent implements OnInit {
 
-  @Input() parameters: Parameter[] | undefined
+  @Input() parameters: Parameter[] = []
 
   @Output() validationChanged: EventEmitter<string> = new EventEmitter<string>()
 
