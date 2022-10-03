@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class PresentationComponent implements OnInit {
 
   @Input() expression: string = ""
+  @Input() isTautology: boolean = false
 
   constructor() { }
 

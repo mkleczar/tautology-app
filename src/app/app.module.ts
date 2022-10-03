@@ -13,9 +13,10 @@ import { ButtonModule } from 'primeng/button';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { FieldsetModule } from 'primeng/fieldset';
-import {RippleModule} from "primeng/ripple";
+import { RippleModule } from "primeng/ripple";
 import { PresentationComponent } from './presentation/presentation.component';
 import { ValidationResultComponent } from './validation-result/validation-result.component';
+import { ChipModule } from 'primeng/chip';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ValidationResultComponent } from './validation-result/validation-result
         ToggleButtonModule,
         InputTextModule,
         FieldsetModule,
-        RippleModule
+        RippleModule,
+        ChipModule
     ],
   providers: [],
   bootstrap: [AppComponent]

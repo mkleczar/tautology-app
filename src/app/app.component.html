@@ -6,7 +6,7 @@
       <app-input (expressionChanged)="onExpressionChanged($event)"></app-input>
     </div>
     <div class="col-6">
-      <app-presentation [expression]="parsedExpression"></app-presentation>
+      <app-presentation [expression]="parsedExpression" [isTautology]="isTautology"></app-presentation>
     </div>
     <div class="col-6">
       <app-parameters [parameters]="parameters" (validationChanged)="onValidationChanged()"></app-parameters>

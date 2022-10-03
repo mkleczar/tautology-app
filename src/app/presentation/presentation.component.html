@@ -1,5 +1,6 @@
 <p-fieldset legend="Parsed expression">
   <div class="text-6xl w-12 text-center">
     {{expression}}
+    <p-chip *ngIf="isTautology" styleClass="custom-chip" label="Tautology!"></p-chip>
   </div>
 </p-fieldset>

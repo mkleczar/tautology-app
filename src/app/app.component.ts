@@ -23,6 +23,8 @@ export class AppComponent {
   parameters: Parameter[] = [];
   parametersPresentation: Parameter[] = [];
 
+  isTautology: boolean = false
+
   onExpressionChanged(exp: string) {
     this.expression = exp
     this.parserService.parse(exp).subscribe(
