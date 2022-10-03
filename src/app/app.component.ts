@@ -35,6 +35,12 @@ export class AppComponent {
           .map(param => {return {name: param, value: true}})
           .concat()
       })
+    this.parserService.isTautology(exp).subscribe(
+      response => {
+        console.log(response)
+        this.isTautology = response.value
+      }
+    )
   }
 
   onValidationChanged() {
