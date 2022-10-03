@@ -17,9 +17,11 @@ export class AppComponent {
 
   expression: string = "";
   parsedExpression: string = "";
+  parsedExpressionPresentation: string = "";
   validation: boolean | undefined
 
   parameters: Parameter[] = [];
+  parametersPresentation: Parameter[] = [];
 
   onExpressionChanged(exp: string) {
     this.expression = exp
@@ -37,7 +39,15 @@ export class AppComponent {
     this.parserService.validate(this.expression, this.parameters).subscribe(
       response => {
         // console.log(response)
-        this.validation = response.value;
+        this.parsedExpressionPresentation = this.parsedExpression
+        this.parametersPresentation = this.cloneArray(this.parameters)
+        this.validation = response.value
       })
+  }
+
+  private cloneArray(params: Parameter[]):Parameter[] {
+    return params
+      .map(param => {return {name: param.name, value: param.value}})
+      .concat()
   }
 }
