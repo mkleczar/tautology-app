@@ -40,12 +40,12 @@ export class AppComponent {
       response => {
         // console.log(response)
         this.parsedExpressionPresentation = this.parsedExpression
-        this.parametersPresentation = this.cloneArray(this.parameters)
+        this.parametersPresentation = AppComponent.cloneArray(this.parameters)
         this.validation = response.value
       })
   }
 
-  private cloneArray(params: Parameter[]):Parameter[] {
+  private static cloneArray(params: Parameter[]):Parameter[] {
     return params
       .map(param => {return {name: param.name, value: param.value}})
       .concat()

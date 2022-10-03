@@ -1,10 +1,8 @@
 <p-fieldset legend="Validation result">
   <!-- TODO: design!!! -->
-  <div class="w-12 text-center">
-    Expression: {{expression}}
+  <div *ngIf="expression" class="w-12 text-center">
+    With parameters: <span class="text-xl" *ngFor="let parameter of parameters">{{parameter.name}}={{parameter.value}} </span>
     <br>
-    Parameters: <div *ngFor="let parameter of parameters">{{parameter.name}} {{parameter.value}}</div>
-    <br>
-    Validation result: {{validation}}
+    <span class="text-2xl">{{expression}}</span> <span class="text-xl"> is {{validation}}</span>
   </div>
 </p-fieldset>
